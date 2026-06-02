@@ -1,47 +1,51 @@
-# 🔁 Queue using Linked List: Display Front and Rear Elements of a Queue
+## 📚 Stack using Linked List: Check and Display Whether the Stack is Full or Not
+
+This Python program demonstrates how to check if a stack (using `LifoQueue` from the `queue` module) is full or not. It uses the `full()` method to determine the stack's status and then displays the appropriate message.
 
 ## 🎯 Aim
 
-To write a Python program to:
-- Insert elements into a queue.
-- Display the element at the **front** of the queue.
-- Display the element at the **rear** of the queue.
-
----
+To write a Python program that:
+- Creates a stack with a fixed size.
+- Adds elements to the stack.
+- Checks if the stack is full.
+- Displays a message indicating whether the stack is full or not.
 
 ## 🧠 Algorithm
 
-1. **Initialize Queue**:
-   - Create an empty list called `queue`.
+1. **Import the LifoQueue class**:
+   - Import `LifoQueue` from the `queue` module to create the stack.
 
-2. **Insert Elements**:
-   - Use the `append()` method to add `'a'`, `'b'`, `'c'`, and `'d'` to the queue.
+2. **Create a Stack**:
+   - Instantiate a `LifoQueue` with a maximum size (e.g., 4).
 
-3. **Display Initial Queue**:
-   - Print `"Initial Queue:"` followed by the current state of the queue.
+3. **Add Elements to the Stack**:
+   - Add elements (e.g., 'a', 'b', and 'c') to the stack using the `put()` method.
 
-4. **Identify Front and Rear**:
-   - Set `front = queue[0]` for the front element.
-   - Set `rear = queue[-1]` for the rear element.
+4. **Check if the Stack is Full**:
+   - Use the `full()` method of `LifoQueue` to check if the stack has reached its maximum capacity.
 
-5. **Print Results**:
-   - Display the front and rear elements with appropriate messages.
+5. **Display the Status**:
+   - Print "Stack is full" if the stack is full.
+   - Otherwise, print "Stack is not full".
 
----
-## Program
+## 📝 Program
 ```
-queue = []
-queue.append('a')
-queue.append('b')
-queue.append('c')
-queue.append('d')
-print('Initial Queue: ' + str(queue))
-print("\nElement at the front of the queue is .... ",queue[0])
-print("\nElement at the rear of the queue is .... ",queue[-1])
-```
+from queue import LifoQueue
 
-## Output
-<img width="800" height="208" alt="image" src="https://github.com/user-attachments/assets/8ed48c53-65f2-4b2d-b89c-ff468702f147" />
+stack = LifoQueue(maxsize=4)
+
+stack.put('a')
+stack.put('b')
+stack.put('c')
+
+if stack.full():
+    print("Stack is full")
+else:
+    print("Stack is not full")
+````
+
+## Sample Input & Output
+<img width="498" height="158" alt="image" src="https://github.com/user-attachments/assets/470cb453-1ba1-4b8a-af46-e52b4948561e" />
 
 ## Result
-The program is excuted and verified.
+The program is run successfully.
